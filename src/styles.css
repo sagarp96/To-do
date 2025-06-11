@@ -1,0 +1,238 @@
+@layer reset {
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Prevent font size inflation */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  /* Remove default margin in favour of better control in authored CSS */
+  body,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin-block-end: 0;
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* Set shorter line heights on headings and interactive elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  /* Balance text wrapping on headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  /* Make sure textareas without a rows attribute are not tiny */
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target {
+    scroll-margin-block: 5ex;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@layer base {
+  img[src$=".svg"], /* Targets all <img> elements with SVG sources */
+  svg {
+    width: 30px; /* Set default width */
+    height: 30px; /* Set default height */
+    display: inline-block; /* Ensures proper alignment */
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size);
+  }
+  :root {
+    --font-primary: "Roboto", sans-serif;
+    --font-weight-light: 100;
+    --font-weight-bold: 700;
+    --font-size: 20px;
+    --clr-background: #d6d6d6;
+  }
+}
+.Maincontainer {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 1fr 3fr;
+  height: 100vh;
+}
+
+.titleArea {
+  grid-column: 1/4;
+  height: 10vh;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #ffe5e5;
+  font-size: 40px;
+}
+.projectArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Start from top but center horizontally */
+  text-align: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border: 1px solid black;
+  height: 90vh;
+  background-color: #e5f3ff;
+  padding: 20px; /* Add some padding */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.centerArea {
+  grid-column: 2/3;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #f0ffe5;
+}
+.todoArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Start from top but center horizontally */
+  text-align: center;
+  border: 1px solid black;
+  height: 90vh;
+  background-color: #e5f3ff;
+  padding: 20px; /* Add some padding */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.task-form {
+  flex-direction: column;
+  border: 1px groove black;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 30px;
+  width: 100%;
+  margin-top: 200px;
+  height: 50vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.projectForm {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 10px;
+  width: 20vw;
+  margin-top: 200px;
+  height: 40vh;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.update-task-form {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 10px;
+  width: 100%;
+  /* margin-top: 200px; */
+  height: 100%;
+}
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.todocontainer {
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 30px;
+  width: 20vw;
+  margin-top: 200px;
+  height: 50vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.ProjectCard {
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 20px;
+  width: 20vw;
+  margin-top: 200px;
+  height: 50vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
